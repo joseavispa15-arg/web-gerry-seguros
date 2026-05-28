@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GerryScaloni - María Luz Gerry | Productora Asesora de Seguros | San Luis</title>
+  <meta name="description" content="María Luz Gerry, Productora Asesora de Seguros Mat. N° 97522, junto a Juan Carlos Gerry como Asesor Comercial. Más de 10 años de experiencia en seguros patrimoniales y de vida. Toda la provincia de San Luis, Argentina." />
+  <meta name="keywords" content="seguros San Luis, productora asesora seguros, seguros patrimoniales, seguros de vida, ART San Luis, María Luz Gerry, GerryScaloni" />
+  <meta name="author" content="María Luz Gerry" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="GerryScaloni - María Luz Gerry, Productora Asesora de Seguros | San Luis" />
+  <meta property="og:description" content="Más de 10 años asesorando con seriedad y compromiso. Seguros patrimoniales, de vida, ART y más. Toda la provincia de San Luis." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_AR" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --azul: #1B4F8C;
+      --azul-oscuro: #143a69;
+      --azul-claro: #2563a8;
+      --blanco: #ffffff;
+      --gris-oscuro: #2d2d2d;
+      --gris-medio: #555555;
+      --gris-claro: #f4f6f9;
+      --acento: #e8f0fb;
+      --sombra: 0 4px 24px rgba(27,79,140,0.12);
+      --sombra-hover: 0 8px 32px rgba(27,79,140,0.22);
+      --radio: 10px;
+      --transicion: 0.35s cubic-bezier(0.4,0,0.2,1);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--gris-oscuro);
+      background: var(--blanco);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── ANIMACIONES SCROLL ── */
+    .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-left { opacity: 0; transform: translateX(-40px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal-left.visible { opacity: 1; transform: translateX(0); }
+    .reveal-right { opacity: 0; transform: translateX(40px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+    /* ── HEADER ── */
+    #header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: rgba(27,79,140,0.97); backdrop-filter: blur(8px);
+      box-shadow: 0 2px 16px rgba(0,0,0,0.15); transition: background var(--transicion);
+    }
+    .header-inner {
+      max-width: 1200px; margin: 0 auto; padding: 0 24px;
+      height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 24px;
+    }
+    .logo-area { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+    .logo-gs { width: 46px; height: 46px; border-radius: 8px; overflow: hidden; flex-shrink: 0; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+    .logo-gs img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .logo-text { color: var(--blanco); }
+    .logo-text strong { display: block; font-size: 16px; font-weight: 700; letter-spacing: 0.5px; line-height: 1.2; }
+    .logo-text span { display: block; font-size: 11px; font-weight: 400; opacity: 0.8; letter-spacing: 0.3px; }
+    nav { display: flex; align-items: center; gap: 6px; }
+    nav a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 13px; font-weight: 500; padding: 8px 14px; border-radius: 6px; transition: all var(--transicion); letter-spacing: 0.3px; }
+    nav a:hover { color: var(--blanco); background: rgba(255,255,255,0.12); }
+    .btn-nav-cta { background: #fff !important; color: var(--azul) !important; font-weight: 700 !important; padding: 9px 18px !important; }
+    .btn-nav-cta:hover { background: #e8f0fb !important; transform: translateY(-1px); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; border: none; background: none; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--blanco); border-radius: 2px; transition: all 0.3s; }
+    .mobile-nav { display: none; flex-direction: column; background: var(--azul-oscuro); padding: 16px 24px 24px; border-top: 1px solid rgba(255,255,255,0.1); }
+    .mobile-nav a { color: rgba(255,255,255,0.9); text-decoration: none; font-size: 15px; font-weight: 500; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.08); display: block; }
+    .mobile-nav a:last-child { border-bottom: none; }
+    .mobile-nav.open { display: flex; }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh; background: linear-gradient(135deg, var(--azul-oscuro) 0%, var(--azul) 50%, var(--azul-claro) 100%);
+      display: flex; align-items: center; position: relative; overflow: hidden; padding-top: 72px;
+    }
+    #hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 80% 20%, rgba(255,255,255,0.06) 0%, transparent 60%), radial-gradient(ellipse at 20% 80%, rgba(255,255,255,0.04) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .hero-pattern {
+      position: absolute; inset: 0;
+      background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 60px 60px; pointer-events: none;
+    }
+    .hero-inner {
+      max-width: 1200px; margin: 0 auto; padding: 80px 24px;
+      position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); border-radius: 50px;
+      padding: 8px 18px; color: rgba(255,255,255,0.9); font-size: 13px; font-weight: 500; margin-bottom: 28px;
+    }
+    .hero-badge::before { content: ''; width: 8px; height: 8px; background: #4ade80; border-radius: 50%; animation: pulse-green 2s infinite; }
+    @keyframes pulse-green { 0%,100% { opacity:1; transform:scale(1); } 50% { opacity:0.6; transform:scale(1.3); } }
+    .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(36px,5vw,56px); font-weight: 700; color: var(--blanco); line-height: 1.15; margin-bottom: 20px; }
+    .hero-title .highlight { color: #93c5fd; display: block; }
+    .hero-sub { font-size: clamp(16px,2vw,18px); color: rgba(255,255,255,0.82); margin-bottom: 36px; font-weight: 400; max-width: 520px; }
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 10px; background: #25d366; color: #fff; text-decoration: none; font-size: 15px; font-weight: 700; padding: 16px 28px; border-radius: var(--radio); transition: all var(--transicion); box-shadow: 0 4px 16px rgba(37,211,102,0.35); }
+    .btn-primary:hover { background: #1da851; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,211,102,0.45); }
+    .btn-secondary { display: inline-flex; align-items: center; gap: 10px; background: transparent; color: #fff; text-decoration: none; font-size: 15px; font-weight: 600; padding: 16px 28px; border-radius: var(--radio); border: 2px solid rgba(255,255,255,0.4); transition: all var(--transicion); }
+    .btn-secondary:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.7); transform: translateY(-2px); }
+    .hero-stats { display: flex; gap: 32px; margin-top: 48px; padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.15); }
+    .stat { text-align: center; }
+    .stat-num { display: block; font-size: 32px; font-weight: 800; color: var(--blanco); line-height: 1; font-family: 'Playfair Display', serif; }
+    .stat-label { font-size: 12px; color: rgba(255,255,255,0.7); font-weight: 500; letter-spacing: 0.5px; margin-top: 4px; }
+    .hero-visual { display: flex; justify-content: center; align-items: center; }
+    .hero-card { background: rgba(255,255,255,0.1); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; padding: 40px; text-align: center; width: 100%; max-width: 340px; box-shadow: 0 20px 60px rgba(0,0,0,0.2); }
+    .hero-avatar { width: 100px; height: 100px; border-radius: 50%; margin: 0 auto 20px; overflow: hidden; border: 3px solid rgba(255,255,255,0.3); box-shadow: 0 4px 16px rgba(0,0,0,0.2); }
+    .hero-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .hero-card-name { font-size: 18px; font-weight: 700; color: var(--blanco); margin-bottom: 6px; }
+    .hero-card-title { font-size: 13px; color: rgba(255,255,255,0.75); margin-bottom: 4px; }
+    .hero-card-mat { font-size: 12px; color: rgba(255,255,255,0.6); margin-bottom: 24px; }
+    .hero-card-divider { height: 1px; background: rgba(255,255,255,0.2); margin-bottom: 20px; }
+    .hero-card-item { display: flex; align-items: center; gap: 10px; font-size: 13px; color: rgba(255,255,255,0.85); margin-bottom: 10px; text-align: left; }
+    .hero-card-item::before { content: '✓'; width: 20px; height: 20px; background: #4ade80; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: #fff; flex-shrink: 0; }
+
+    /* ── SECCIÓN GENÉRICA ── */
+    section { padding: 96px 24px; }
+    .container { max-width: 1200px; margin: 0 auto; }
+    .section-label { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--azul); background: var(--acento); padding: 6px 16px; border-radius: 50px; margin-bottom: 16px; }
+    .section-title { font-family: 'Playfair Display', serif; font-size: clamp(28px,4vw,42px); font-weight: 700; color: var(--gris-oscuro); line-height: 1.25; margin-bottom: 16px; }
+    .section-sub { font-size: 17px; color: var(--gris-medio); max-width: 580px; line-height: 1.7; }
+    .text-center { text-align: center; }
+    .text-center .section-sub { margin: 0 auto; }
+
+    /* ── SOBRE MÍ ── */
+    #sobre-mi { background: var(--gris-claro); }
+    .sobre-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 64px; align-items: center; }
+    .sobre-img-wrap { position: relative; padding-bottom: 56px; padding-top: 28px; }
+    .sobre-img { width: 70%; aspect-ratio: 4/5; border-radius: 4px; overflow: hidden; box-shadow: 0 24px 64px rgba(0,0,0,0.18); background: var(--azul-oscuro); position: relative; z-index: 1; }
+    .sobre-img img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
+    .sobre-img-2 { position: absolute; bottom: 0; right: 0; width: 50%; aspect-ratio: 3/4; border-radius: 4px; overflow: hidden; box-shadow: 0 12px 40px rgba(0,0,0,0.22); z-index: 2; border: 3px solid var(--blanco); }
+    .sobre-img-2 img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+    .sobre-badge { position: absolute; top: -16px; right: 28%; background: #C9A961; border-radius: 12px; padding: 14px 18px; box-shadow: 0 4px 20px rgba(201,169,97,0.4); text-align: center; min-width: 120px; z-index: 3; }
+    .sobre-badge-num { font-size: 28px; font-weight: 800; color: var(--blanco); line-height: 1; font-family: 'Playfair Display', serif; }
+    .sobre-badge-text { font-size: 11px; color: rgba(255,255,255,0.9); font-weight: 600; letter-spacing: 0.5px; }
+    .mat-tag { display: inline-flex; align-items: center; gap: 8px; background: var(--azul); color: var(--blanco); font-size: 13px; font-weight: 600; padding: 8px 18px; border-radius: 50px; margin-bottom: 24px; }
+    .sobre-text { font-size: 16px; color: var(--gris-medio); margin-bottom: 20px; line-height: 1.8; }
+    .sobre-quote { border-left: 4px solid var(--azul); padding: 16px 24px; background: var(--blanco); border-radius: 0 10px 10px 0; margin: 28px 0; font-size: 17px; font-style: italic; color: var(--gris-oscuro); font-family: 'Playfair Display', serif; line-height: 1.6; }
+    .mvv-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 28px; margin-top: 56px; }
+    .mvv-card { background: var(--blanco); border-radius: 16px; padding: 36px 28px; box-shadow: 0 4px 20px rgba(0,0,0,0.07); border-top: 4px solid var(--azul); }
+    .mvv-title { font-size: 12px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; color: var(--azul); margin-bottom: 18px; }
+    .mvv-text { font-size: 15px; color: var(--gris-medio); line-height: 1.85; }
+    .mvv-list { list-style: none; padding: 0; margin: 0 0 12px; }
+    .mvv-list li { font-size: 15px; color: var(--gris-medio); padding: 7px 0; border-bottom: 1px solid #eef1f6; display: flex; align-items: center; gap: 10px; }
+    .mvv-list li::before { content: '—'; color: var(--azul); font-weight: 700; flex-shrink: 0; }
+    .mvv-list li:last-child { border-bottom: none; }
+    .mvv-list-note { font-size: 13px; color: #94a3b8; font-style: italic; margin-top: 8px; }
+
+    /* ── VISIÓN DEL TRABAJO ── */
+    #vision-trabajo { background: var(--blanco); }
+    .vision-intro { font-size: 16px; color: var(--gris-medio); font-style: italic; text-align: center; max-width: 580px; margin: 0 auto 52px; line-height: 1.7; }
+    .citas-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 28px; }
+    .cita-card { background: var(--gris-claro); border-radius: 16px; padding: 36px 30px 30px; display: flex; flex-direction: column; }
+    .cita-comilla { font-size: 72px; color: var(--azul); opacity: 0.18; font-family: 'Playfair Display', serif; line-height: 0.75; margin-bottom: 18px; display: block; }
+    .cita-texto { font-size: 16px; font-style: italic; font-family: 'Playfair Display', serif; color: var(--gris-oscuro); line-height: 1.85; flex: 1; }
+    .cita-autor { font-size: 13px; font-weight: 700; color: var(--azul); letter-spacing: 0.3px; margin-top: 20px; padding-top: 16px; border-top: 1px solid #dde3ee; }
+
+    /* ── SERVICIOS ── */
+    #servicios { background: var(--blanco); }
+    .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-top: 56px; }
+    .card { background: var(--blanco); border: 1px solid #e5eaf2; border-radius: 16px; padding: 36px 28px; transition: all var(--transicion); position: relative; overflow: hidden; }
+    .card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--azul), var(--azul-claro)); transform: scaleX(0); transform-origin: left; transition: transform var(--transicion); }
+    .card:hover { box-shadow: var(--sombra-hover); transform: translateY(-6px); }
+    .card:hover::before { transform: scaleX(1); }
+    .card-icon { width: 64px; height: 64px; background: var(--acento); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 28px; margin-bottom: 20px; }
+    .card-title { font-size: 18px; font-weight: 700; color: var(--gris-oscuro); margin-bottom: 10px; }
+    .card-text { font-size: 14px; color: var(--gris-medio); line-height: 1.7; margin-bottom: 20px; }
+    .card-items { list-style: none; }
+    .card-items li { font-size: 13px; color: var(--gris-medio); padding: 5px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: center; gap: 8px; }
+    .card-items li:last-child { border-bottom: none; }
+    .card-items li::before { content: '→'; color: var(--azul); font-weight: 700; font-size: 12px; flex-shrink: 0; }
+
+    /* Card destacada - Retiro */
+    .card--featured {
+      background: linear-gradient(145deg, #1B4F8C, #2563a8);
+      border-color: transparent;
+      position: relative;
+    }
+    .card--featured .card-title { color: #fff; }
+    .card--featured .card-text { color: rgba(255,255,255,0.8); }
+    .card--featured .card-icon { background: rgba(255,255,255,0.15); }
+    .card--featured .card-items li { color: rgba(255,255,255,0.85); border-bottom-color: rgba(255,255,255,0.12); }
+    .card--featured .card-items li::before { color: #fcd34d; }
+    .card--featured::before { background: linear-gradient(90deg, #fcd34d, #f59e0b) !important; transform: scaleX(1) !important; }
+    .card--featured:hover { box-shadow: 0 8px 32px rgba(27,79,140,0.4); transform: translateY(-6px); }
+    .card-badge {
+      position: absolute;
+      top: 16px; right: 16px;
+      background: #fcd34d;
+      color: #92400e;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 50px;
+    }
+
+    /* ── COMPAÑÍAS ── */
+    #companias { background: var(--azul-oscuro); }
+    #companias .section-title { color: var(--blanco); }
+    #companias .section-sub { color: rgba(255,255,255,0.7); }
+    #companias .section-label { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.9); }
+    .companias-subtitulo { text-align: center; font-size: 15px; font-weight: 600; color: rgba(255,255,255,0.75); letter-spacing: 0.3px; margin: 40px 0 28px; }
+    .companias-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; }
+    .compania-item { background: #fff; border-radius: 12px; padding: 20px 16px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; height: 120px; box-shadow: 0 2px 12px rgba(0,0,0,0.1); transition: transform 0.25s, box-shadow 0.25s; }
+    .compania-item:hover { transform: scale(1.05); box-shadow: 0 8px 24px rgba(0,0,0,0.16); }
+    .compania-item img { height: 48px; width: auto; max-width: 100%; object-fit: contain; }
+    .compania-name { font-size: 11.5px; font-weight: 600; color: #374151; text-align: center; }
+    .companias-note { text-align: center; margin-top: 36px; font-size: 15px; color: rgba(255,255,255,0.68); font-style: italic; }
+
+    /* ── POR QUÉ ELEGIRME ── */
+    #por-que { background: var(--gris-claro); }
+    .razones-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap: 28px; margin-top: 56px; }
+    .razon { background: var(--blanco); border-radius: 16px; padding: 36px 28px; text-align: center; box-shadow: var(--sombra); transition: all var(--transicion); }
+    .razon:hover { transform: translateY(-4px); box-shadow: var(--sombra-hover); }
+    .razon-icon { font-size: 44px; margin-bottom: 16px; display: block; }
+    .razon-title { font-size: 17px; font-weight: 700; color: var(--gris-oscuro); margin-bottom: 10px; }
+    .razon-text { font-size: 14px; color: var(--gris-medio); line-height: 1.7; }
+
+    /* ── CONTACTO ── */
+    #contacto { background: var(--blanco); }
+    .contacto-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; margin-top: 56px; }
+    .contacto-titulo { font-size: 22px; font-weight: 700; color: var(--gris-oscuro); margin-bottom: 8px; }
+    .contacto-sub { font-size: 15px; color: var(--gris-medio); margin-bottom: 32px; line-height: 1.7; }
+    .contacto-canales { display: flex; flex-direction: column; gap: 16px; }
+    .canal { display: flex; align-items: center; gap: 16px; padding: 18px 20px; border-radius: 12px; background: var(--gris-claro); text-decoration: none; color: var(--gris-oscuro); transition: all var(--transicion); border: 2px solid transparent; }
+    .canal:hover { border-color: var(--azul); background: var(--acento); transform: translateX(4px); }
+    .canal-icon { width: 46px; height: 46px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+    .canal-icon.wsp { background: #d9f5e2; }
+    .canal-icon.mail { background: var(--acento); }
+    .canal-icon.ig { background: #fce4ec; }
+    .canal-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--gris-medio); }
+    .canal-value { font-size: 15px; font-weight: 600; color: var(--gris-oscuro); }
+    .form-card { background: var(--gris-claro); border-radius: 20px; padding: 40px; }
+    .form-title { font-size: 20px; font-weight: 700; color: var(--gris-oscuro); margin-bottom: 8px; }
+    .form-sub { font-size: 14px; color: var(--gris-medio); margin-bottom: 28px; }
+    .form-group { margin-bottom: 18px; }
+    .form-label { display: block; font-size: 13px; font-weight: 600; color: var(--gris-oscuro); margin-bottom: 8px; }
+    .form-input, .form-textarea { width: 100%; padding: 14px 18px; border: 2px solid #e5eaf2; border-radius: 10px; font-family: 'Montserrat', sans-serif; font-size: 14px; color: var(--gris-oscuro); background: var(--blanco); transition: border-color var(--transicion); outline: none; }
+    .form-input:focus, .form-textarea:focus { border-color: var(--azul); }
+    .form-textarea { resize: vertical; min-height: 110px; }
+    .form-btn { width: 100%; padding: 16px; background: #25d366; color: var(--blanco); border: none; border-radius: 10px; font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 700; cursor: pointer; transition: all var(--transicion); display: flex; align-items: center; justify-content: center; gap: 10px; }
+    .form-btn:hover { background: #1da851; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37,211,102,0.35); }
+
+    /* ── FOOTER ── */
+    footer { background: var(--gris-oscuro); color: rgba(255,255,255,0.7); padding: 56px 24px 32px; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; margin-bottom: 40px; }
+    .footer-logo { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+    .footer-logo-gs { width: 42px; height: 42px; border-radius: 8px; overflow: hidden; flex-shrink: 0; }
+    .footer-logo-gs img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .footer-logo-text { font-size: 15px; font-weight: 700; color: var(--blanco); }
+    .footer-desc { font-size: 14px; line-height: 1.7; margin-bottom: 16px; }
+    .footer-mat { font-size: 12px; color: rgba(255,255,255,0.45); }
+    .footer-col-title { font-size: 13px; font-weight: 700; color: var(--blanco); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 16px; }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-links a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 14px; transition: color var(--transicion); }
+    .footer-links a:hover { color: var(--blanco); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    .footer-copy { font-size: 13px; }
+    .footer-legal { font-size: 12px; color: rgba(255,255,255,0.4); text-align: right; max-width: 400px; }
+
+    /* ── WHATSAPP FLOTANTE ── */
+    .wsp-fab { position: fixed; bottom: 28px; right: 28px; z-index: 9999; width: 60px; height: 60px; background: #25d366; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(37,211,102,0.45); text-decoration: none; transition: all var(--transicion); animation: wsp-bounce 3s ease-in-out infinite; }
+    .wsp-fab:hover { transform: scale(1.1); box-shadow: 0 8px 32px rgba(37,211,102,0.55); animation: none; }
+    .wsp-fab svg { width: 30px; height: 30px; fill: #fff; }
+    @keyframes wsp-bounce { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-6px); } }
+    .wsp-tooltip { position: fixed; bottom: 100px; right: 28px; background: var(--blanco); color: var(--gris-oscuro); font-size: 13px; font-weight: 600; padding: 10px 16px; border-radius: 10px; box-shadow: var(--sombra); pointer-events: none; opacity: 0; transition: opacity 0.3s; white-space: nowrap; z-index: 9998; }
+    .wsp-fab:hover ~ .wsp-tooltip { opacity: 1; }
+
+    /* ══ CHATBOT ══ */
+    #chat-btn { position: fixed; bottom: 28px; right: 100px; z-index: 10000; width: 56px; height: 56px; background: #1B4F8C; border-radius: 50%; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(27,79,140,0.45); animation: chat-pulse 2.8s ease-in-out infinite; transition: transform 0.3s, box-shadow 0.3s; }
+    #chat-btn:hover { transform: scale(1.1); box-shadow: 0 8px 28px rgba(27,79,140,0.55); animation: none; }
+    #chat-btn svg { width: 26px; height: 26px; fill: #fff; }
+    #chat-badge { position: absolute; top: -4px; right: -4px; width: 18px; height: 18px; background: #ef4444; border-radius: 50%; font-size: 10px; font-weight: 700; color: #fff; display: flex; align-items: center; justify-content: center; font-family: 'Montserrat', sans-serif; }
+    @keyframes chat-pulse { 0%,100% { box-shadow:0 4px 20px rgba(27,79,140,0.45); } 50% { box-shadow:0 4px 28px rgba(27,79,140,0.7),0 0 0 8px rgba(27,79,140,0.1); } }
+    #chat-window { position: fixed; bottom: 96px; right: 28px; z-index: 9999; width: 350px; max-height: 500px; background: #fff; border-radius: 18px; box-shadow: 0 8px 40px rgba(27,79,140,0.22); display: flex; flex-direction: column; overflow: hidden; transform: scale(0.85) translateY(20px); transform-origin: bottom right; opacity: 0; pointer-events: none; transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1), opacity 0.25s ease; }
+    #chat-window.open { transform: scale(1) translateY(0); opacity: 1; pointer-events: all; }
+    .chat-header { background: #1B4F8C; padding: 16px 18px; display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+    .chat-header-avatar { width: 38px; height: 38px; border-radius: 50%; overflow: hidden; border: 2px solid rgba(255,255,255,0.3); flex-shrink: 0; }
+    .chat-header-avatar img { width: 100%; height: 100%; object-fit: cover; }
+    .chat-header-info { flex: 1; }
+    .chat-header-name { font-size: 14px; font-weight: 700; color: #fff; font-family: 'Montserrat', sans-serif; }
+    .chat-header-status { font-size: 11px; color: rgba(255,255,255,0.75); font-family: 'Montserrat', sans-serif; display: flex; align-items: center; gap: 5px; }
+    .chat-header-status::before { content: ''; width: 7px; height: 7px; background: #4ade80; border-radius: 50%; display: inline-block; }
+    .chat-close { background: none; border: none; cursor: pointer; color: rgba(255,255,255,0.8); font-size: 20px; line-height: 1; padding: 4px; border-radius: 50%; transition: background 0.2s, color 0.2s; }
+    .chat-close:hover { background: rgba(255,255,255,0.15); color: #fff; }
+    .chat-body { flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 12px; background: #f8fafc; scroll-behavior: smooth; }
+    .chat-body::-webkit-scrollbar { width: 4px; }
+    .chat-body::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+    .msg-bot { background: #f1f5f9; border-radius: 14px 14px 14px 4px; padding: 12px 14px; font-size: 13.5px; color: #2d2d2d; font-family: 'Montserrat', sans-serif; line-height: 1.6; max-width: 90%; animation: msg-in 0.3s ease; }
+    .msg-bot strong { color: #1B4F8C; }
+    .msg-bot ul { padding-left: 16px; margin: 8px 0 4px; }
+    .msg-bot ul li { margin-bottom: 5px; font-size: 13px; }
+    .msg-bot .motivador { margin-top: 10px; padding: 8px 12px; background: #e8f0fb; border-left: 3px solid #1B4F8C; border-radius: 4px; font-size: 12.5px; color: #1B4F8C; font-weight: 600; }
+    @keyframes msg-in { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+    .chat-options { display: flex; flex-direction: column; gap: 8px; animation: msg-in 0.35s ease; }
+    .chat-opt-btn { background: #fff; border: 1.5px solid #1B4F8C; color: #1B4F8C; border-radius: 10px; padding: 10px 14px; font-size: 13px; font-weight: 600; font-family: 'Montserrat', sans-serif; cursor: pointer; text-align: left; transition: background 0.2s, color 0.2s; display: flex; align-items: center; gap: 8px; }
+    .chat-opt-btn:hover { background: #1B4F8C; color: #fff; }
+    .chat-final-btns { display: flex; flex-direction: column; gap: 8px; margin-top: 4px; animation: msg-in 0.35s ease; }
+    .chat-wsp-btn { background: #25d366; color: #fff; border: none; border-radius: 10px; padding: 12px 14px; font-size: 13px; font-weight: 700; font-family: 'Montserrat', sans-serif; cursor: pointer; display: flex; align-items: center; gap: 8px; transition: background 0.2s; }
+    .chat-wsp-btn:hover { background: #1da851; }
+    .chat-back-btn { background: #fff; color: #555; border: 1.5px solid #cbd5e1; border-radius: 10px; padding: 10px 14px; font-size: 13px; font-weight: 600; font-family: 'Montserrat', sans-serif; cursor: pointer; transition: background 0.2s; }
+    .chat-back-btn:hover { background: #f1f5f9; }
+    .chat-typing { display: flex; align-items: center; gap: 5px; padding: 10px 14px; background: #f1f5f9; border-radius: 14px 14px 14px 4px; width: fit-content; animation: msg-in 0.3s ease; }
+    .chat-typing span { width: 7px; height: 7px; background: #94a3b8; border-radius: 50%; animation: typing-dot 1.2s infinite; }
+    .chat-typing span:nth-child(2) { animation-delay: 0.2s; }
+    .chat-typing span:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes typing-dot { 0%,80%,100% { transform:translateY(0); opacity:0.5; } 40% { transform:translateY(-6px); opacity:1; } }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1100px) { .companias-grid { grid-template-columns: repeat(4,1fr); } }
+    @media (max-width: 900px) {
+      nav { display: none; }
+      .hamburger { display: flex; }
+      .hero-inner { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+      .hero-btns { justify-content: center; }
+      .hero-stats { justify-content: center; }
+      .hero-sub { margin: 0 auto 36px; }
+      .sobre-grid { grid-template-columns: 1fr; gap: 40px; }
+      .sobre-img { width: 100%; aspect-ratio: 4/5; max-height: none; }
+      .sobre-img img { object-fit: cover; height: 100%; object-position: center; }
+      .sobre-img-2 { position: static; width: 100%; aspect-ratio: 3/4; margin-top: 16px; border-radius: 4px; border: none; box-shadow: 0 8px 24px rgba(0,0,0,0.16); }
+      .sobre-badge { top: auto; bottom: -16px; right: 16px; }
+      .contacto-grid { grid-template-columns: 1fr; gap: 40px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .footer-legal { text-align: center; }
+      .hero-visual { order: -1; }
+      .companias-grid { grid-template-columns: repeat(3,1fr); }
+      .compania-item { height: 110px; }
+      .compania-item img { height: 44px; }
+      .mvv-grid { grid-template-columns: 1fr; }
+      .citas-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      section { padding: 64px 20px; }
+      .hero-inner { padding: 60px 20px; }
+      .cards-grid { grid-template-columns: 1fr; }
+      .companias-grid { grid-template-columns: repeat(2,1fr); }
+      .razones-grid { grid-template-columns: 1fr; }
+      .form-card { padding: 28px 20px; }
+    }
+    @media (max-width: 768px) {
+      #chat-window { width: 92vw; right: 4vw; bottom: 100px; }
+      #chat-btn { right: 98px; bottom: 28px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header id="header">
+    <div class="header-inner">
+      <a href="#hero" class="logo-area">
+        <div class="logo-gs"><img src="assets/Captura.png" alt="GerryScaloni" /></div>
+        <div class="logo-text">
+          <strong>GerryScaloni</strong>
+          <span>Productora Asesora de Seguros · Mat. N° 97522 y Asesor Comercial</span>
+        </div>
+      </a>
+      <nav>
+        <a href="#sobre-mi">Sobre nosotros</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#companias">Compañías</a>
+        <a href="#por-que">¿Por qué elegirme?</a>
+        <a href="#contacto" class="btn-nav-cta">Contacto</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="mobile-nav" id="mobile-nav">
+      <a href="#sobre-mi" onclick="closeMobile()">Sobre nosotros</a>
+      <a href="#servicios" onclick="closeMobile()">Servicios</a>
+      <a href="#companias" onclick="closeMobile()">Compañías</a>
+      <a href="#por-que" onclick="closeMobile()">¿Por qué elegirme?</a>
+      <a href="#contacto" onclick="closeMobile()">Contacto</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-pattern"></div>
+    <div class="hero-inner">
+      <div>
+        <div class="hero-badge reveal">Activo en toda la provincia de San Luis</div>
+        <h1 class="hero-title reveal">
+          Tu patrimonio y tu familia
+          <span class="highlight">merecen la mejor protección.</span>
+        </h1>
+        <p class="hero-sub reveal">Más de 10 años asesorando a familias y empresas de San Luis con seguros a medida. Transparencia, compromiso y atención personalizada en cada paso.</p>
+        <div class="hero-btns reveal">
+          <a href="https://wa.me/5492664808350?text=Hola%20Juan%20Carlos%2C%20me%20gustar%C3%ADa%20consultar%20por%20un%20seguro." class="btn-primary" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            Cotizar por WhatsApp
+          </a>
+          <a href="#sobre-mi" class="btn-secondary">Conocer más <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+        <div class="hero-stats reveal">
+          <div class="stat"><span class="stat-num">+10</span><div class="stat-label">Años de experiencia</div></div>
+          <div class="stat"><span class="stat-num">13</span><div class="stat-label">Compañías aliadas</div></div>
+          <div class="stat"><span class="stat-num">100%</span><div class="stat-label">Atención personalizada</div></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card reveal-right">
+          <div class="hero-card-name">María Luz Gerry</div>
+          <div class="hero-card-title">Productora Asesora de Seguros · Mat. N° 97522</div>
+          <div class="hero-card-title" style="margin-top:4px; font-size:12px;">Juan Carlos Gerry — Asesor Comercial</div>
+          <div class="hero-card-mat">San Luis, Argentina</div>
+          <div class="hero-card-divider"></div>
+          <div class="hero-card-item">Seguros patrimoniales</div>
+          <div class="hero-card-item">Seguros de vida y retiro</div>
+          <div class="hero-card-item">ART y seguros empresariales</div>
+          <div class="hero-card-item">Asesoramiento sin costo</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE MÍ -->
+  <section id="sobre-mi">
+    <div class="container">
+      <div class="sobre-grid">
+        <div class="sobre-img-wrap reveal-left">
+          <div class="sobre-img">
+            <img src="assets/productora.png" alt="María Luz Gerry — Productora Asesora de Seguros" loading="eager" decoding="async" />
+          </div>
+          <div class="sobre-img-2">
+            <img src="assets/asesor.png" alt="Equipo GerryScaloni" loading="lazy" decoding="async" />
+          </div>
+          <div class="sobre-badge">
+            <div class="sobre-badge-num">+10</div>
+            <div class="sobre-badge-text">años de trayectoria</div>
+          </div>
+        </div>
+        <div class="reveal-right">
+          <span class="section-label">Quiénes somos</span>
+          <h2 class="section-title">Un equipo familiar al servicio de tu protección</h2>
+          <div class="mat-tag">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            Matrícula N° 97522 · María Luz Gerry — Productora Asesora habilitada
+          </div>
+          <p class="sobre-text">Somos <strong>María Luz Gerry</strong>, Productora Asesora de Seguros matrícula N° 97522, y mi padre <strong>Juan Carlos Gerry</strong>, asesor comercial con más de 10 años de experiencia en el rubro. Juntos conformamos un equipo familiar dedicado al acompañamiento integral de nuestros clientes en San Luis.</p>
+          <p class="sobre-text">María Luz aporta el respaldo profesional de la matrícula habilitante N° 97522 otorgada por la Superintendencia de Seguros de la Nación. Juan Carlos acompaña con su experiencia comercial de más de una década en el sector.</p>
+          <p class="sobre-text">Nuestro trabajo no termina cuando firman la póliza. Estamos presentes cuando ocurre un siniestro, cuando necesitás actualizar tu cobertura o cuando simplemente querés entender qué estás contratando.</p>
+          <blockquote class="sobre-quote">"Nuestro compromiso es que entiendas exactamente qué protección tenés y que sientas que tomaste la mejor decisión."</blockquote>
+          <a href="https://wa.me/5492664808350?text=Hola%20Juan%20Carlos%2C%20quiero%20hacer%20una%20consulta." class="btn-primary" target="_blank" rel="noopener" style="display:inline-flex;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            Consultame sin compromiso
+          </a>
+        </div>
+      </div>
+      <div class="mvv-grid">
+        <div class="mvv-card reveal">
+          <div class="mvv-title">Misión</div>
+          <p class="mvv-text">Proteger el patrimonio de las familias y, a través de los seguros de vida y de retiro, brindar un plan financiero sólido para su futuro.</p>
+        </div>
+        <div class="mvv-card reveal" style="transition-delay:0.1s">
+          <div class="mvv-title">Visión</div>
+          <p class="mvv-text">Llegar a la mayor cantidad de familias e individuos posibles con nuestro servicio, siendo referentes en el asesoramiento de seguros y en la protección del patrimonio familiar.</p>
+        </div>
+        <div class="mvv-card reveal" style="transition-delay:0.2s">
+          <div class="mvv-title">Valores</div>
+          <ul class="mvv-list">
+            <li>Laboriosidad</li>
+            <li>Responsabilidad</li>
+            <li>Seriedad</li>
+            <li>Sinceridad</li>
+          </ul>
+          <p class="mvv-list-note">En todos los trabajos y servicios que brindamos a la comunidad.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NUESTRA VISIÓN DEL TRABAJO -->
+  <section id="vision-trabajo">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="section-label">Nuestra filosofía</span>
+        <h2 class="section-title">Nuestra visión del trabajo</h2>
+      </div>
+      <p class="vision-intro reveal">Las palabras de San Juan Pablo II nos inspiran y orientan en nuestra labor diaria:</p>
+      <div class="citas-grid">
+        <div class="cita-card reveal">
+          <span class="cita-comilla">"</span>
+          <p class="cita-texto">La remuneración del trabajo debe ser tal que permita al hombre y a su familia una vida digna.</p>
+          <div class="cita-autor">— San Juan Pablo II</div>
+        </div>
+        <div class="cita-card reveal" style="transition-delay:0.1s">
+          <span class="cita-comilla">"</span>
+          <p class="cita-texto">El trabajo es la causa eficiente primera y el primer fundamento del trabajo es el hombre mismo.</p>
+          <div class="cita-autor">— San Juan Pablo II</div>
+        </div>
+        <div class="cita-card reveal" style="transition-delay:0.2s">
+          <span class="cita-comilla">"</span>
+          <p class="cita-texto">El trabajo es un bien para el hombre... se realiza a sí mismo como hombre, es más, en cierto sentido, se hace más hombre.</p>
+          <div class="cita-autor">— San Juan Pablo II</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="section-label">Servicios</span>
+        <h2 class="section-title">¿Qué necesitás proteger?</h2>
+        <p class="section-sub">Coberturas adaptadas a tu realidad. Analizamos tu situación y te recomendamos la opción más conveniente del mercado.</p>
+      </div>
+      <div class="cards-grid">
+        <div class="card reveal">
+          <div class="card-icon"><span>🏠</span></div>
+          <h3 class="card-title">Seguros Patrimoniales</h3>
+          <p class="card-text">Protegé tus bienes materiales con coberturas completas y adaptadas a tu situación.</p>
+          <ul class="card-items"><li>Seguro de automóvil</li><li>Seguro de hogar y consorcio</li><li>Seguro de comercio y negocio</li><li>Equipos y maquinaria</li><li>Responsabilidad civil</li></ul>
+        </div>
+        <div class="card reveal" style="transition-delay:0.1s">
+          <div class="card-icon"><span>❤️</span></div>
+          <h3 class="card-title">Seguro de Vida</h3>
+          <p class="card-text">Brindá tranquilidad y respaldo económico a quienes más querés ante cualquier eventualidad.</p>
+          <ul class="card-items"><li>Seguro de vida individual</li><li>Vida colectivo empresarial</li><li>Seguro de sepelio</li><li>Cobertura por incapacidad</li><li>Beneficiarios a elección</li></ul>
+        </div>
+        <div class="card card--featured reveal" style="transition-delay:0.2s">
+          <span class="card-badge">⭐ Especialidad</span>
+          <div class="card-icon"><span>💰</span></div>
+          <h3 class="card-title">Seguro de Retiro</h3>
+          <p class="card-text">Planificá tu futuro y asegurate un ingreso mensual para cuando lo necesites.</p>
+          <ul class="card-items"><li>Renta mensual garantizada</li><li>Capital acumulado propio</li><li>Cobertura ante fallecimiento</li><li>Desde $30.000 ARS/mes</li><li>Flexible y personalizable</li></ul>
+        </div>
+        <div class="card reveal" style="transition-delay:0.4s">
+          <div class="card-icon"><span>🏢</span></div>
+          <h3 class="card-title">Seguros para Empresas</h3>
+          <p class="card-text">Soluciones integrales para proteger tu negocio, activos y equipo de trabajo.</p>
+          <ul class="card-items"><li>Seguro comercial integral</li><li>Transporte de mercaderías</li><li>Incendio y robo</li><li>Cobertura de empleados</li><li>Responsabilidad civil patronal</li></ul>
+        </div>
+        <div class="card reveal" style="transition-delay:0.5s">
+          <div class="card-icon"><span>⛑️</span></div>
+          <h3 class="card-title">ART · Riesgos del Trabajo</h3>
+          <p class="card-text">Cumplí con la obligación legal y protegé a tu personal ante accidentes laborales.</p>
+          <ul class="card-items"><li>ART para empleadores</li><li>Monotributistas y autónomos</li><li>Personal doméstico</li><li>Gestión de siniestros</li><li>Asesoramiento en normativa</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPAÑÍAS -->
+  <section id="companias">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="section-label">Nuestro alcance</span>
+        <h2 class="section-title">Acceso a las principales compañías del mercado</h2>
+        <p class="section-sub" style="color:rgba(255,255,255,0.7); margin:0 auto;">Como productores independientes, trabajamos con un amplio abanico de aseguradoras líderes en el mercado argentino. Esto nos permite comparar opciones reales y ofrecerte la cobertura más conveniente según tu situación particular.</p>
+      </div>
+      <p class="companias-subtitulo reveal">Trabajamos con las principales compañías del mercado</p>
+      <div class="companias-grid">
+        <div class="compania-item reveal"><img src="assets/logos-companias/tutelar.jpg" alt="Tutelar" /><div class="compania-name">Tutelar</div></div>
+        <div class="compania-item reveal" style="transition-delay:0.05s"><img src="assets/logos-companias/sancorseguros.png" alt="Sancor Seguros" /><div class="compania-name">Sancor Seguros</div></div>
+        <div class="compania-item reveal" style="transition-delay:0.1s"><img src="assets/logos-companias/Sancristobal.png" alt="San Cristóbal" /><div class="compania-name">San Cristóbal</div></div>
+        <div class="compania-item reveal" style="transition-delay:0.15s"><img src="assets/logos-companias/CNP.png" alt="CNP Seguros" /><div class="compania-name">CNP Seguros</div></div>
+        <div class="compania-item reveal" style="transition-delay:0.2s"><img src="assets/logos-companias/mapfre.png" alt="Mapfre" /><div class="compania-name">Mapfre</div></div>
+        <div class="compania-item reveal" style="transition-delay:0.25s"><img src="assets/logos-companias/Zurich.png" alt="Zurich" /><div class="compania-name">Zurich</div></div>
+        <div class="compania-item reveal" style="transition-delay:0.3s"><img src="assets/logos-companias/ExpertaART.png" alt="Experta ART" /><div class="compania-name">Experta ART</div></div>
+        <div class="compania-item reveal" style="transition-delay:0.35s"><img src="assets/logos-companias/Asociart.jpg" alt="Asociart" /><div class="compania-name">Asociart</div></div>
+        <div class="compania-item reveal" style="transition-delay:0.4s"><img src="assets/logos-companias/lacaja.png" alt="La Caja" /><div class="compania-name">La Caja</div></div>
+        <div class="compania-item reveal" style="transition-delay:0.45s"><img src="assets/logos-companias/Segurosrivadavia.png" alt="Seguros Rivadavia" /><div class="compania-name">Seguros Rivadavia</div></div>
+        <div class="compania-item reveal" style="transition-delay:0.5s"><img src="assets/logos-companias/origenes.png" alt="Orígenes" /><div class="compania-name">Orígenes</div></div>
+        <div class="compania-item reveal" style="transition-delay:0.55s"><img src="assets/logos-companias/Prevencion.png" alt="Prevención" /><div class="compania-name">Prevención</div></div>
+      </div>
+      <p class="companias-note reveal">Consultanos para conocer las opciones específicas disponibles según tu necesidad de cobertura.</p>
+    </div>
+  </section>
+
+  <!-- POR QUÉ ELEGIRME -->
+  <section id="por-que">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="section-label">¿Por qué elegirme?</span>
+        <h2 class="section-title">Asesoramiento independiente y personalizado</h2>
+        <p class="section-sub">Como productores independientes, comparamos opciones entre las principales compañías para encontrar la cobertura que mejor se adapte a tu situación particular.</p>
+      </div>
+      <div class="razones-grid">
+        <div class="razon reveal"><span class="razon-icon">🏆</span><h3 class="razon-title">+10 años de experiencia</h3><p class="razon-text">Una trayectoria sólida en el rubro asegurador te garantiza el criterio y la experiencia para tomar la mejor decisión.</p></div>
+        <div class="razon reveal" style="transition-delay:0.1s"><span class="razon-icon">🤝</span><h3 class="razon-title">Atención directa y personalizada en cada consulta</h3><p class="razon-text">Te atendemos de forma directa y te acompañamos antes, durante y después del siniestro.</p></div>
+        <div class="razon reveal" style="transition-delay:0.2s"><span class="razon-icon">📍</span><h3 class="razon-title">Toda la provincia de San Luis</h3><p class="razon-text">Presentes en toda San Luis. Podemos reunirnos personalmente o gestionar todo de forma remota, como prefieras.</p></div>
+        <div class="razon reveal" style="transition-delay:0.3s"><span class="razon-icon">💬</span><h3 class="razon-title">Asesoramiento sin costo</h3><p class="razon-text">La primera consulta no te cuesta nada. Analizamos tu situación y te brindamos una recomendación basada en el análisis de tu situación particular sin compromiso.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="section-label">Contacto</span>
+        <h2 class="section-title">¿Hablamos?</h2>
+        <p class="section-sub">Completá el formulario o escribinos directamente. Te respondemos a la brevedad.</p>
+      </div>
+      <div class="contacto-grid">
+        <div class="reveal-left">
+          <h3 class="contacto-titulo">Canales de contacto</h3>
+          <p class="contacto-sub">Elegí la forma que más te convenga.</p>
+          <div class="contacto-canales">
+            <a href="https://wa.me/5492664808350" class="canal" target="_blank" rel="noopener">
+              <div class="canal-icon wsp"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="#25d366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></div>
+              <div><div class="canal-label">WhatsApp</div><div class="canal-value">2664-808350</div></div>
+            </a>
+            <a href="mailto:juangerry454@gmail.com" class="canal">
+              <div class="canal-icon mail"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1B4F8C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+              <div><div class="canal-label">Email</div><div class="canal-value">juangerry454@gmail.com</div></div>
+            </a>
+          </div>
+        </div>
+        <div class="form-card reveal-right">
+          <h3 class="form-title">Envianos tu consulta</h3>
+          <p class="form-sub">Te respondemos por WhatsApp a la brevedad.</p>
+          <form id="contactForm">
+            <div class="form-group"><label class="form-label" for="nombre">Tu nombre *</label><input class="form-input" type="text" id="nombre" placeholder="Juan Pérez" required /></div>
+            <div class="form-group"><label class="form-label" for="telefono">Teléfono / WhatsApp *</label><input class="form-input" type="tel" id="telefono" placeholder="2664-XXXXXX" required /></div>
+            <div class="form-group"><label class="form-label" for="consulta">¿Qué necesitás asegurar?</label><textarea class="form-textarea" id="consulta" placeholder="Contanos brevemente qué querés proteger..."></textarea></div>
+            <button type="submit" class="form-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+              Enviar por WhatsApp
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">
+            <div class="footer-logo-gs"><img src="assets/Captura.png" alt="GerryScaloni" /></div>
+            <div class="footer-logo-text">GerryScaloni</div>
+          </div>
+          <p class="footer-desc">Equipo familiar con más de 10 años de trayectoria en San Luis. <strong style="color:#fff;">María Luz Gerry</strong> — Productora Asesora de Seguros. <strong style="color:#fff;">Juan Carlos Gerry</strong> — Asesor Comercial. Seguros patrimoniales, de vida, ART y coberturas empresariales.</p>
+          <p class="footer-mat" style="font-size:12px; color:rgba(255,255,255,0.55); line-height:1.6;">Actividad de Productor Asesor de Seguros regida por la Ley N° 22.400 y regulada por la Superintendencia de Seguros de la Nación (SSN).<br>Matrícula N° 97522 — María Luz Gerry.<br><a href="https://www.argentina.gob.ar/ssn" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.5); text-decoration:underline;">www.argentina.gob.ar/ssn</a> — Superintendencia de Seguros de la Nación</p>
+        </div>
+        <div>
+          <div class="footer-col-title">Servicios</div>
+          <ul class="footer-links">
+            <li><a href="#servicios">Seguros patrimoniales</a></li>
+            <li><a href="#servicios">Seguros de vida y retiro</a></li>
+            <li><a href="#servicios">Seguros para empresas</a></li>
+            <li><a href="#servicios">ART</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Contacto</div>
+          <ul class="footer-links">
+            <li><a href="https://wa.me/5492664808350">WhatsApp: 2664-808350</a></li>
+            <li><a href="mailto:juangerry454@gmail.com">juangerry454@gmail.com</a></li>
+            <li><a href="#sobre-mi">Sobre nosotros</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 GerryScaloni · María Luz Gerry (PAS Mat. N° 97522) · Juan Carlos Gerry (Asesor Comercial) · Todos los derechos reservados</p>
+        <p class="footer-legal">Actividad de Productor Asesor de Seguros regida por la Ley N° 22.400. Matrícula N° 97522 — María Luz Gerry — Superintendencia de Seguros de la Nación. · <a href="https://www.argentina.gob.ar/ssn" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.4);">www.argentina.gob.ar/ssn</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP FAB -->
+  <a href="https://wa.me/5492664808350?text=Hola%20Juan%20Carlos%2C%20me%20gustar%C3%ADa%20hacer%20una%20consulta%20sobre%20seguros." class="wsp-fab" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+  </a>
+  <div class="wsp-tooltip">¡Escribime por WhatsApp!</div>
+
+  <!-- CHATBOT -->
+  <button id="chat-btn" aria-label="Abrir asistente">
+    <div id="chat-badge">1</div>
+    <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg>
+  </button>
+  <div id="chat-window" role="dialog">
+    <div class="chat-header">
+      <div class="chat-header-avatar"><img src="assets/Captura.png" alt="Asistente" /></div>
+      <div class="chat-header-info">
+        <div class="chat-header-name">Asistente GerryScaloni</div>
+        <div class="chat-header-status">En línea ahora</div>
+      </div>
+      <button class="chat-close" id="chat-close">✕</button>
+    </div>
+    <div class="chat-body" id="chat-body"></div>
+  </div>
+
+  <script>
+    // ── MENÚ MOBILE ──
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobile-nav');
+    hamburger.addEventListener('click', () => mobileNav.classList.toggle('open'));
+    function closeMobile() { mobileNav.classList.remove('open'); }
+
+    // ── SCROLL REVEAL ──
+    const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(el => observer.observe(el));
+
+    // ── FORMULARIO → WHATSAPP ──
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const nombre = document.getElementById('nombre').value.trim();
+      const telefono = document.getElementById('telefono').value.trim();
+      const consulta = document.getElementById('consulta').value.trim();
+      if (!nombre || !telefono) { alert('Por favor completá tu nombre y teléfono.'); return; }
+      const msg = `Hola Juan Carlos! Te contacto desde tu web.\n\n👤 *Nombre:* ${nombre}\n📞 *Teléfono:* ${telefono}${consulta ? `\n📝 *Consulta:* ${consulta}` : ''}`;
+      window.open(`https://wa.me/5492664808350?text=${encodeURIComponent(msg)}`, '_blank', 'noopener');
+    });
+
+    // ── HEADER SCROLL ──
+    window.addEventListener('scroll', () => {
+      document.getElementById('header').style.background = window.scrollY > 60 ? 'rgba(20,58,105,0.98)' : 'rgba(27,79,140,0.97)';
+    }, { passive: true });
+
+    // ── CHATBOT ──
+    (function() {
+      const WA = '5492664808350';
+      const SEGUROS = {
+        auto:     { emoji:'🚗', label:'Seguro de Auto',            datos:['Foto de la tarjeta verde del auto','Uso (particular / comercial)','DNI del titular','¿Tiene seguro actual? ¿Con qué compañía?','¿Qué tipo de cobertura necesita?','Si tiene GNC, declararlo'], msg:'Hola Juan Carlos, quiero cotizar un seguro de auto. Ya tengo los datos listos.' },
+        hogar:    { emoji:'🏠', label:'Seguro de Hogar',           datos:['Tipo de vivienda (casa / departamento)','Superficie aproximada en m²','¿Es propietario o inquilino?','¿Cuenta con alarma, rejas en puertas y ventanas u otro sistema de seguridad?','Valor estimado del contenido','Dirección del inmueble'], msg:'Hola Juan Carlos, quiero cotizar un seguro de hogar. Ya tengo los datos preparados.' },
+        vida:     { emoji:'❤️', label:'Seguro de Vida',            datos:['Fecha de nacimiento del asegurado','¿Fuma o fumó en los últimos 2 años?','Enfermedades preexistentes (si las hay)','Capital a asegurar deseado','Nombre y vínculo de los beneficiarios'], msg:'Hola Juan Carlos, quiero consultar por un seguro de vida. Ya tengo la información lista.' },
+        art:      { emoji:'⛑️', label:'ART (Empresas/Empleadores)',datos:['CUIT de la empresa','Actividad principal','Cantidad de empleados','Nómina con nombre, CUIL y categoría','Dirección del establecimiento','¿Tiene ART vigente? ¿Con qué aseguradora?'], msg:'Hola Juan Carlos, soy empleador y necesito cotizar ART. Tengo los datos de la empresa.' },
+        comercio: { emoji:'🏢', label:'Seguro de Comercio',        datos:['Tipo de comercio y actividad','Dirección del local','Superficie en m²','Valor estimado del stock y mercadería','Valor de instalaciones y equipos','¿Tiene alarma, rejas o seguridad?'], msg:'Hola Juan Carlos, quiero asegurar mi comercio. Ya tengo los datos del local listos.' },
+        retiro:   { emoji:'💰', label:'Seguro de Retiro',          datos:['DNI del titular','Fecha de nacimiento','Cuánto se anima a pagar por mes (mínimo $30.000 ARS/mes)'], msg:'Hola Juan Carlos, quiero consultar por un seguro de retiro. Ya tengo los datos listos.' },
+      };
+      const btn = document.getElementById('chat-btn');
+      const win = document.getElementById('chat-window');
+      const body = document.getElementById('chat-body');
+      const badge = document.getElementById('chat-badge');
+      let isOpen = false;
+      function toggleChat() { isOpen = !isOpen; win.classList.toggle('open', isOpen); if (isOpen) { badge.style.display='none'; if (!body.children.length) showMenu(); } }
+      btn.addEventListener('click', toggleChat);
+      document.getElementById('chat-close').addEventListener('click', toggleChat);
+      function addEl(el) { body.appendChild(el); body.scrollTop = body.scrollHeight; }
+      function typing(cb, delay=900) { const t=document.createElement('div'); t.className='chat-typing'; t.innerHTML='<span></span><span></span><span></span>'; addEl(t); setTimeout(()=>{ t.remove(); cb(); }, delay); }
+      function botMsg(html) { const m=document.createElement('div'); m.className='msg-bot'; m.innerHTML=html; addEl(m); }
+      function showMenu() {
+        typing(()=>{
+          botMsg('¡Hola! Soy el asistente de <strong>GerryScaloni</strong>. Te ayudo a preparar tu consulta para cotizar más rápido.<br><br><strong>¿Qué tipo de seguro te interesa?</strong>');
+          setTimeout(()=>{
+            const opts=document.createElement('div'); opts.className='chat-options';
+            Object.entries(SEGUROS).forEach(([key,s])=>{ const b=document.createElement('button'); b.className='chat-opt-btn'; b.innerHTML=`<span>${s.emoji}</span> ${s.label}`; b.addEventListener('click',()=>showSeguro(key)); opts.appendChild(b); });
+            addEl(opts);
+          },200);
+        });
+      }
+      function showSeguro(key) {
+        const s=SEGUROS[key];
+        body.querySelectorAll('.chat-options').forEach(el=>el.remove());
+        typing(()=>{
+          botMsg(`<strong>${s.emoji} ${s.label}</strong><br><br>Para cotizarte rápido, tené a mano:<ul>${s.datos.map(d=>`<li>${d}</li>`).join('')}</ul><div class="motivador">⚡ Con estos datos, te cotizo en menos de 24hs</div>`);
+          setTimeout(()=>{
+            const btns=document.createElement('div'); btns.className='chat-final-btns';
+            const wBtn=document.createElement('button'); wBtn.className='chat-wsp-btn'; wBtn.innerHTML='<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg> ✅ Tengo los datos, contactar ahora';
+            wBtn.addEventListener('click',()=>window.open(`https://wa.me/${WA}?text=${encodeURIComponent(s.msg)}`,'_blank','noopener'));
+            const bBtn=document.createElement('button'); bBtn.className='chat-back-btn'; bBtn.textContent='🔙 Volver al menú';
+            bBtn.addEventListener('click',()=>{ body.innerHTML=''; showMenu(); });
+            btns.appendChild(wBtn); btns.appendChild(bBtn); addEl(btns);
+          },200);
+        },1000);
+      }
+    })();
+  </script>
+</body>
+</html>
